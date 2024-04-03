@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+	<html lang='ru'>
+		<head>
+			<title lang='ru'>Венерцев 1ИСП-21</title>
+			<meta charset='UTF-8'>
+		</head>
+		
+		<style>
+			body{
+				color: #120418;
+				background-color: #849FB7;
+			}
+			#btnCalc{
+				color: #120418;
+				width: 76px;
+				margin-top: 10px;
+				margin-left: 10px;
+				border-radius: 5px;
+				border: 1px solid black;
+				background-color: #768CA4;
+			}
+			#divResult{
+				color: #120418;
+				background-color: #768CA4;
+				width: 100px;
+				margin-top: 10px;
+				margin-left: 10px;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+			
+		</style>
+		
+		<body class='body'>
+
+				<button id="btnCalc" onclick="calculate()">
+				  Выполнить
+				</button>
+				
+				<div id="divResult"> </div>
+		</body>
+		<script>
+			function calculate(){
+				var list = [3.5, 9.8, 2.3, 4.6, 7.2];
+				var n = parseInt(5);
+				
+			    var sum = 0;
+				var int_parts = [];
+			    
+			    for (let i = 0; i < n; i++) {
+			        var int_part = Math.floor(list[i]);
+			        int_parts.push(int_part);
+			        sum += int_part;
+			    }
+			    
+				document.getElementById("divResult").innerHTML =  "Целые части: " + int_parts + "\n" + "Сумма целых частей: " + sum;
+			  }
+		</script>
+	</html>

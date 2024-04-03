@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+	<html lang='ru'>
+		<head>
+			<title lang='ru'>Венерцев 1ИСП-21</title>
+			<meta charset='UTF-8'>
+		</head>
+		
+		<style>
+			body{
+				color: #120418;
+				background-color: #849FB7;
+			}
+			#inputA{
+		        color: #120418;
+		        width: 40px;
+		        margin-top: 10px;
+		        margin-left: 10px;
+		        border-radius: 5px;
+		        border: 1px solid black;
+		        background-color: #768CA4;
+		      }
+			#btnCalc{
+				color: #120418;
+				width: 76px;
+				margin-top: 10px;
+				margin-left: 10px;
+				border-radius: 5px;
+				border: 1px solid black;
+				background-color: #768CA4;
+			}
+			#divResult{
+				color: #120418;
+				background-color: #768CA4;
+				width: 200px;
+				margin-top: 10px;
+				margin-left: 10px;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+			#divResult2{
+				color: #120418;
+				background-color: #768CA4;
+				width: 200px;
+				margin-top: 10px;
+				margin-left: 10px;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+			
+		</style>
+		
+		<body class='body'>
+				
+				<input placeholder="Цена" id="inputA" />
+				
+				<button id="btnCalc" onclick="calculate()">
+				  Выполнить
+				</button>
+				
+				<div id="divResult"> </div>
+				<div id="divResult2"> </div>
+		</body>
+		<script>
+			function calculate(){
+				var prise_for_kg = parseFloat(document.getElementById("inputA").value);
+				var prices_1_10 = [];
+			    
+			    for (let i = 0; i < 11; i++) {
+					prices_1_10.push(prise_for_kg * i);
+			    }
+			    
+				document.getElementById("divResult").innerHTML = "Цены от 0кг до 10кг: \n" + prices_1_10.join(', ');
+				document.getElementById("divResult2").innerHTML = "Цены за 1кг: " + prise_for_kg;
+			  }
+		</script>
+	</html>
